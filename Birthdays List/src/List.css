@@ -1,0 +1,45 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item .elements {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  color: #eee;
+}
+
+.item .elements img {
+  width: 4.75rem;
+  height: 4.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.item .elements .info {
+  position: relative;
+  margin-inline: 1.5rem;
+}
+
+.item .elements .info > #name,
+.item .elements .info > #age {
+  margin: 0;
+}
+
+.item .elements .info #age {
+  position: absolute;
+  right: 0;
+
+  color: hsl(0, 0%, 80%);
+}
+
+.btn {
+  transition: all 0.4s;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}

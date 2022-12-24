@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import data from "./data"
+import "./List.css"
 
 const List = () => {
   const removeItem = (id) => {
@@ -15,20 +16,23 @@ const List = () => {
         const { id, name, age, image } = person
 
         return (
-          <section>
-            <section>
+          <section key={id} className="item">
+            <section className="elements">
               <img src={image} alt="" />
+              <div className="info">
+                <h3 id="name">{name}</h3>
+                <h4 id="age">{age}</h4>
+              </div>
             </section>
-            <div className="info">
-              <h3>{name}</h3>
-              <h4>{age}</h4>
-            </div>
             <button className="btn" onClick={() => removeItem(id)}>
               remove
             </button>
           </section>
         )
       })}
+      <button className="btn" onClick={() => setPeople([])}>
+        Clear All
+      </button>
     </>
   )
 }

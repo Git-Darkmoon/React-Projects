@@ -1,0 +1,16 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+h1 {
+  font-weight: 100;
+  margin-block: -0.5rem;
+  color: hsl(237, 100%, 80%);
+}
