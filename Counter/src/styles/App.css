@@ -1,0 +1,13 @@
+body {
+  background-color: #141414;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
