@@ -2,29 +2,41 @@ import React from "react"
 import styles from "./styles/todo styles/todo.module.css"
 
 const todo = () => {
+  const AddTask = (task) => {
+    ;<div className={styles.task}>
+      <h3 className="taskTitle">{task}</h3>
+      <div className={styles.btns}>
+        <button className={styles.editBtn}>Edit</button>
+        <button className={styles.delBtn}>Delete</button>
+      </div>
+    </div>
+  }
+
   return (
     <>
-      <section className={styles.actions}>
-        <input type="text" name="" id="" />
-        <button className={styles.btn}>Add task</button>
-      </section>
-      <section className="taskContainer">
-        <div className="task">
-          <h3 className="taskTitle">Buy Something</h3>
-          <button className="actionBtn">Edit</button>
-          <button className="actionBtn">Delete</button>
-        </div>
+      <form
+        className={styles.actions}
+        onSubmit={(e) => {
+          e.preventDefault()
+        }}
+      >
+        <input type="text" name="" id="taskDesired" />
+        <button
+          // type="submit"
+          className={styles.btn}
+          onClick={() => AddTask("comprar algo")}
+        >
+          Add task
+        </button>
+      </form>
 
-        <div className="task">
+      <section className={styles.taskContainer}>
+        <div className={styles.task}>
           <h3 className="taskTitle">Buy Something</h3>
-          <button className="actionBtn">Edit</button>
-          <button className="actionBtn">Delete</button>
-        </div>
-
-        <div className="task">
-          <h3 className="taskTitle">Buy Something</h3>
-          <button className="actionBtn">Edit</button>
-          <button className="actionBtn">Delete</button>
+          <div className={styles.btns}>
+            <button className={styles.editBtn}>Edit</button>
+            <button className={styles.delBtn}>Delete</button>
+          </div>
         </div>
       </section>
     </>
