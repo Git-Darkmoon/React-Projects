@@ -1,0 +1,31 @@
+@use "../_variables" as var;
+@use "../mixins" as mixin;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.actions {
+  @include mixin.flexCenter(row);
+  width: 100vw;
+
+  input {
+    width: 75%;
+    border: none;
+    outline: none;
+    padding-left: 2rem;
+    padding-block: 0.75rem;
+  }
+}
+
+.btn {
+  padding-inline: 1.5rem;
+  padding-block: 0.75rem;
+  background-color: var.$taskBtn-color;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
