@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #242424;
+}
+
+.title {
+  color: hsl(250deg, 80%, 90%);
+  font-size: 2.35rem;
+  font-weight: 350;
+  text-align: center;
+  padding-block: 2rem;
+}
+
+.container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-inline: 1.5rem;
+}
+
+.card {
+  min-width: 24.375rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: hsl(250deg, 80%, 90%);
+  background-color: hsl(0deg, 0%, 11%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.card .data {
+  display: flex;
+  gap: 1rem;
+}
+.card .side_img {
+  display: flex;
+}
+.card .side_img img {
+  max-width: 5rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 100%;
+}
+.card .data_info .name {
+  font-weight: 400;
+}
+.card .data_info .mail {
+  color: hsla(250deg, 80%, 90%, 0.65);
+  font-weight: 300;
+}
+.card .data_info details summary {
+  color: hsla(250deg, 80%, 90%, 0.65);
+  font-weight: 500;
+  cursor: pointer;
+}
+.card .data_info details summary::-webkit-details-marker {
+  -webkit-animation: colorChange 20s infinite;
+          animation: colorChange 20s infinite;
+  color: #646cff;
+}
+.card .data_info details summary::marker {
+  -webkit-animation: colorChange 2s infinite;
+          animation: colorChange 2s infinite;
+  color: #646cff;
+}
+.card .data_info details p {
+  color: hsla(250deg, 80%, 90%, 0.65);
+  font-weight: 300;
+}
+.card .data_info details p > span {
+  font-weight: 500;
+}/*# sourceMappingURL=content.module.css.map */
