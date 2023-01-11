@@ -1,0 +1,112 @@
+// Variables:
+
+$white: #fefcff;
+$gray: #c3c3d6;
+$black: #242132;
+$purple-light: #ae8cfa;
+$purple-dark: #746cfe;
+$baseFontSize: 2.65rem;
+$baseFontWeight: 400;
+$transition: all 0.3s;
+
+// Flex mixin
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+/* :root {
+    color-scheme: light dark;
+}*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  background-color: $black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  letter-spacing: 0.15rem;
+}
+
+h1 {
+  font-size: $baseFontSize;
+  font-weight: $baseFontWeight;
+}
+
+h2 {
+  font-size: calc($baseFontSize - 0.5rem);
+  font-weight: calc($baseFontWeight - 100);
+}
+
+h3 {
+  font-size: calc($baseFontSize - 1rem);
+  font-weight: calc($baseFontWeight - 200);
+}
+
+h4 {
+  font-size: calc($baseFontSize - 1.5rem);
+  font-weight: calc($baseFontWeight - 300);
+}
+
+h5 {
+  font-size: calc($baseFontSize - 1.75rem);
+  font-weight: calc($baseFontWeight - 300);
+}
+
+// Nav styles
+
+.navbar {
+  width: 100vw;
+  height: 3rem;
+  padding-block: 2.35rem;
+  padding-inline: 3.65rem;
+  color: $white;
+  background-color: $black;
+
+  @include flexCenter(row);
+  justify-content: space-between;
+
+  .logo {
+    h2 {
+      font-weight: 100;
+      letter-spacing: 0.3rem;
+
+      &::selection {
+        display: none;
+      }
+    }
+  }
+
+  .links_section {
+    @include flexCenter(row);
+    gap: 2rem;
+
+    li {
+      list-style: none;
+
+      a {
+        color: $white;
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+          text-shadow: 1px 0 10px $purple-light;
+          color: $purple-light;
+        }
+      }
+    }
+  }
+}
