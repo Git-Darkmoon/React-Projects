@@ -103,6 +103,45 @@ h5 {
   font-weight: calc($baseFontWeight - 300);
 }
 
+// Loading Style
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  @include flexCenter(row);
+}
+
+.loadingTitle {
+  font-size: 5rem;
+  text-shadow: 1px 0 10px $purple-light;
+  color: $purple-light;
+}
+
+// Refresh Btn Styling
+
+.refreshContainer {
+  width: 100vw;
+  height: calc(100vh - calc(3rem + 2.35rem));
+
+  @include flexCenter(row);
+
+  .btn {
+    font-size: 4rem;
+    text-shadow: 1px 0 10px $purple-light;
+    color: $purple-light;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: none;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: font-size 0.3s ease-out;
+    &:hover {
+      font-size: 5rem;
+    }
+  }
+}
+
 // Nav styles
 
 .navbar {
@@ -155,30 +194,77 @@ h5 {
   @include flexCenter(row);
   flex-wrap: wrap;
   gap: 2rem;
-  // background-color: $purple-light;
 }
 
 .card {
-  width: 25rem;
-  height: 32.5rem;
-  background: rgba(174, 140, 250, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  // backdrop-filter: blur(13px);
-  // -webkit-backdrop-filter: blur(13px);
-  border-radius: 10px;
-  // border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 25.2rem;
+  height: 34.75rem;
 
+  // height: 25.2rem;
+  // width: 32.75rem;
+
+  @include flexCenter(column);
+  justify-content: space-between;
+  padding-inline: 0.65rem;
+
+  background-position: center;
+  border-radius: 10px;
   color: $white;
 
-  img {
-    width: 100%;
-    height: fit-content;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    aspect-ratio: 16/9;
+  &:hover {
+    h4 {
+      opacity: 1;
+    }
   }
 
-  p {
-    color: $gray;
+  h2 {
+    padding-top: 2rem;
+  }
+
+  h4 {
+    background-image: linear-gradient(to left, #1b1828 5%, #1b182800 40%);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-align: end;
+    color: $purple-light;
+    text-shadow: 1px 0 7px $purple-light;
+    opacity: 0;
+    transition: $transition;
+  }
+
+  h5 {
+    text-align: justify;
+    // padding-bottom: 1rem;
+
+    .readBtn {
+      margin-left: 0.2rem;
+      background-color: transparent;
+      border: none;
+      text-shadow: 1px 0 7px $purple-light;
+      color: $purple-light;
+      cursor: pointer;
+    }
+  }
+  .btn {
+    width: 100%;
+    margin-block: 0.5rem;
+    padding: 0.25rem;
+    cursor: pointer;
+
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+
+    h5 {
+      text-align: center;
+      font-weight: 300;
+      color: $purple-light;
+    }
+  }
+}
+
+@media (max-width: 80rem) {
+  .card {
+    height: 27.2rem;
+    width: 32.75rem;
   }
 }

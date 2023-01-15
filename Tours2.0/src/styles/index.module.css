@@ -78,6 +78,44 @@ h5 {
   font-weight: 100;
 }
 
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.loadingTitle {
+  font-size: 5rem;
+  text-shadow: 1px 0 10px #ae8cfa;
+  color: #ae8cfa;
+}
+
+.refreshContainer {
+  width: 100vw;
+  height: calc(100vh - 5.35rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.refreshContainer .btn {
+  font-size: 4rem;
+  text-shadow: 1px 0 10px #ae8cfa;
+  color: #ae8cfa;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: none;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: font-size 0.3s ease-out;
+}
+.refreshContainer .btn:hover {
+  font-size: 5rem;
+}
+
 .navbar {
   width: 100vw;
   height: 3rem;
@@ -133,22 +171,62 @@ h5 {
 }
 
 .card {
-  width: 25rem;
-  height: 32.5rem;
-  background: rgba(174, 140, 250, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 25.2rem;
+  height: 34.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-inline: 0.65rem;
+  background-position: center;
   border-radius: 10px;
   color: #fefcff;
 }
-.card img {
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  aspect-ratio: 16/9;
+.card:hover h4 {
+  opacity: 1;
 }
-.card p {
-  color: #c3c3d6;
+.card h2 {
+  padding-top: 2rem;
+}
+.card h4 {
+  background-image: linear-gradient(to left, #1b1828 5%, rgba(27, 24, 40, 0) 40%);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-align: end;
+  color: #ae8cfa;
+  text-shadow: 1px 0 7px #ae8cfa;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.card h5 {
+  text-align: justify;
+}
+.card h5 .readBtn {
+  margin-left: 0.2rem;
+  background-color: transparent;
+  border: none;
+  text-shadow: 1px 0 7px #ae8cfa;
+  color: #ae8cfa;
+  cursor: pointer;
+}
+.card .btn {
+  width: 100%;
+  margin-block: 0.5rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+.card .btn h5 {
+  text-align: center;
+  font-weight: 300;
+  color: #ae8cfa;
+}
+
+@media (max-width: 80rem) {
+  .card {
+    height: 27.2rem;
+    width: 32.75rem;
+  }
 }/*# sourceMappingURL=index.module.css.map */
