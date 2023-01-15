@@ -15,7 +15,6 @@ const App = () => {
 
     try {
       const response = await fetch(API_URL)
-
       const toursData = await response.json()
       setTours(toursData)
       // setLoading(false)
