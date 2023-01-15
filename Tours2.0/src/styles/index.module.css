@@ -1,0 +1,154 @@
+/* :root {
+    color-scheme: light dark;
+}*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 6px;
+  border: 3.5px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  background-color: rgb(170, 170, 170);
+  border-radius: 7px;
+  box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: hsl(0deg, 0%, 47%);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1b1828;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  letter-spacing: 0.15rem;
+}
+
+h1 {
+  font-size: 2.65rem;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 2.15rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.65rem;
+  font-weight: 200;
+}
+
+h4 {
+  font-size: 1.15rem;
+  font-weight: 100;
+}
+
+h5 {
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+
+.navbar {
+  width: 100vw;
+  height: 3rem;
+  padding-block: 2.35rem;
+  padding-inline: 3.65rem;
+  color: #fefcff;
+  background-color: #1b1828;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navbar .logo h2 {
+  font-weight: 100;
+  letter-spacing: 0.3rem;
+}
+.navbar .logo h2::-moz-selection {
+  display: none;
+}
+.navbar .logo h2::selection {
+  display: none;
+}
+.navbar .links_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+.navbar .links_section li {
+  list-style: none;
+}
+.navbar .links_section li a {
+  color: #fefcff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.navbar .links_section li a:hover {
+  text-shadow: 1px 0 10px #ae8cfa;
+  color: #ae8cfa;
+}
+
+.wrapper {
+  width: 100vw;
+  padding-block: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  width: 25rem;
+  height: 32.5rem;
+  background: rgba(174, 140, 250, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
+  color: #fefcff;
+}
+.card img {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  aspect-ratio: 16/9;
+}
+.card p {
+  color: #c3c3d6;
+}/*# sourceMappingURL=index.module.css.map */

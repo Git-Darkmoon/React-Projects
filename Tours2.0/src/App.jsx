@@ -2,14 +2,34 @@ import React, { useState, useEffect } from "react"
 import Loading from "./Loading"
 import Nav from "./Nav"
 import Tours from "./Tours"
-import "./styles/index.modules.css"
+import "./styles/index.module.css"
 
 const API_URL = "https://course-api.com/react-tours-project"
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(false)
+  const [Loading, setLoading] = useState(false)
+  const [tours, setTours] = useState([])
 
-  if (isLoading) {
+  const getData = async () => {
+    // setLoading(true)
+
+    try {
+      const response = await fetch(API_URL)
+
+      const toursData = await response.json()
+      setTours(toursData)
+      // setLoading(false)
+    } catch (error) {
+      // setLoading(false)
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  if (Loading) {
     return (
       <main className="container">
         <Loading />
@@ -20,7 +40,7 @@ const App = () => {
   return (
     <main className="container">
       <Nav />
-      <Tours />
+      <Tours tours={tours} />
     </main>
   )
 }

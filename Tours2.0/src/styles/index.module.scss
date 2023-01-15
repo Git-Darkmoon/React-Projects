@@ -2,7 +2,7 @@
 
 $white: #fefcff;
 $gray: #c3c3d6;
-$black: #242132;
+$black: #1b1828;
 $purple-light: #ae8cfa;
 $purple-dark: #746cfe;
 $baseFontSize: 2.65rem;
@@ -29,8 +29,45 @@ $transition: all 0.3s;
   font-family: "Outfit", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 6px;
+  border: 3.5px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  background-color: rgb(170, 170, 170);
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05),
+    inset 1px 1px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05),
+    inset 1px 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: hsl(0, 0%, 47%);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $black;
+  overflow-x: hidden;
 }
 
 h1,
@@ -108,5 +145,40 @@ h5 {
         }
       }
     }
+  }
+}
+
+.wrapper {
+  width: 100vw;
+  padding-block: 2rem;
+
+  @include flexCenter(row);
+  flex-wrap: wrap;
+  gap: 2rem;
+  // background-color: $purple-light;
+}
+
+.card {
+  width: 25rem;
+  height: 32.5rem;
+  background: rgba(174, 140, 250, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  // backdrop-filter: blur(13px);
+  // -webkit-backdrop-filter: blur(13px);
+  border-radius: 10px;
+  // border: 1px solid rgba(255, 255, 255, 0.18);
+
+  color: $white;
+
+  img {
+    width: 100%;
+    height: fit-content;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    aspect-ratio: 16/9;
+  }
+
+  p {
+    color: $gray;
   }
 }

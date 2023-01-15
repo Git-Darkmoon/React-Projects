@@ -1,12 +1,13 @@
 import React from "react"
+import styles from "./styles/index.module.css"
 
 const Nav = () => {
   return (
-    <nav className="navbar">
-      <div className="logo">
+    <nav className={styles.navbar}>
+      <div className={styles.logo}>
         <h2>iTours</h2>
       </div>
-      <ul className="links_section">
+      <ul className={styles.links_section}>
         <li>
           <a href="">
             <h4>Home</h4>
