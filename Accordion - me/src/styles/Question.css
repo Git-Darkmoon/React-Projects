@@ -1,0 +1,18 @@
+.wrapper {
+  padding-inline: 2rem;
+  /* padding-block: 1rem; */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header button {
+  border-radius: 100%;
+  background-color: hsl(292, 73%, 95%);
+  border: none;
+  width: 4rem;
+  height: 4rem;
+}

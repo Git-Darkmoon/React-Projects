@@ -1,0 +1,7 @@
+.container {
+  background-color: hsl(0, 0%, 95%);
+  display: flex;
+  flex-basis: 1;
+  width: 80vw;
+  padding: 3rem;
+}
