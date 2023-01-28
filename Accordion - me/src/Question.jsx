@@ -1,19 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
 import "./styles/Question.css"
+import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io"
 
-const Question = () => {
+const Question = ({ title, info }) => {
+  const [readMore, setReadMore] = useState(false)
+
   return (
     <div className="wrapper">
-      <header>
-        <h3>Do I have to allow the use of cookies ?</h3>
-        <button>PLUS</button>
-      </header>
-      <article className="content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur esse
-        temporibus ea velit quis cupiditate saepe ullam, quo exercitationem
-        molestiae officiis minima distinctio assumenda fugiat atque sequi
-        dignissimos ipsum. Dolore.
-      </article>
+      <div className="top-content">
+        <h3>{title}</h3>
+        <button onClick={() => setReadMore(!readMore)}>
+          {readMore ? <IoIosArrowDown /> : <IoIosArrowUp />}
+        </button>
+      </div>
+      <article className="content">{readMore ? info : ``}</article>
     </div>
   )
 }

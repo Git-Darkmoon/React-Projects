@@ -6,7 +6,7 @@ import "./styles/App.css"
 const App = () => {
   return (
     <main className="container">
-      <h2>Question and answers about login</h2>
+      <h1>Questions and answers about login</h1>
       <div className="questions">
         {questionsData.map((eachQuestion) => {
           return <Question key={eachQuestion.id} {...eachQuestion} />

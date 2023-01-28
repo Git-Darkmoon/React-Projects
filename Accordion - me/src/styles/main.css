@@ -6,5 +6,16 @@
 }
 
 body {
-  background-color: hsl(269, 74%, 20%);
+  /* background-color: hsl(285, 75%, 20%); */
+  background: rgb(40, 16, 136);
+  background: linear-gradient(
+    135deg,
+    rgba(40, 16, 136, 1) 0%,
+    rgba(146, 8, 161, 1) 50%,
+    rgba(255, 119, 0, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
