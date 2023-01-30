@@ -1,0 +1,26 @@
+@use "./variables" as var;
+
+.container {
+  margin-block: 2rem;
+
+  .title {
+    text-align: center;
+    text-transform: capitalize;
+    color: var.$sand;
+    font-size: 3rem;
+
+    margin-block-start: 4rem;
+    margin-block-end: 2rem;
+
+    span {
+      font-size: 3.5rem;
+      color: var.$gold-light;
+      text-shadow: 0px 0px 14px var.$gold-dark;
+      transition: var.$transition;
+
+      &:hover {
+        text-shadow: 0px 0px 18px var.$gold-light;
+      }
+    }
+  }
+}

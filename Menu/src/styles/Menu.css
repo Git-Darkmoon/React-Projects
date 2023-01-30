@@ -1,0 +1,32 @@
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+  margin-block: 3rem;
+  flex-wrap: wrap;
+  flex: 1;
+  font-family: "Roboto", sans-serif;
+}
+.products .card {
+  display: flex;
+  max-width: 45rem;
+  gap: 2rem;
+}
+.products .card img {
+  width: 25rem;
+}
+.products .card .info header {
+  display: flex;
+  justify-content: space-between;
+}
+.products .card .info header h2 {
+  color: #c59d5f;
+  text-transform: capitalize;
+}
+.products .card .info header h5 {
+  color: #efcfa0;
+}
+.products .card .info p {
+  color: hsl(36deg, 71%, 88%);
+}/*# sourceMappingURL=Menu.css.map */

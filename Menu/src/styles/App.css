@@ -1,0 +1,22 @@
+.container {
+  margin-block: 2rem;
+}
+.container .title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #efcfa0;
+  font-size: 3rem;
+  -webkit-margin-before: 4rem;
+          margin-block-start: 4rem;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+}
+.container .title span {
+  font-size: 3.5rem;
+  color: #e1a140;
+  text-shadow: 0px 0px 14px #c59d5f;
+  transition: all 0.3s ease;
+}
+.container .title span:hover {
+  text-shadow: 0px 0px 18px #e1a140;
+}/*# sourceMappingURL=App.css.map */

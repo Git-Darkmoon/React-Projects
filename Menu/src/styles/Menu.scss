@@ -1,0 +1,42 @@
+@use "./variables" as var;
+
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+
+  margin-block: 3rem;
+  flex-wrap: wrap;
+  flex: 1;
+
+  font-family: var.$font-family_Roboto;
+
+  .card {
+    display: flex;
+    max-width: 45rem;
+    gap: 2rem;
+
+    img {
+      width: 25rem;
+    }
+    .info {
+      header {
+        display: flex;
+        justify-content: space-between;
+
+        h2 {
+          color: var.$gold-dark;
+          text-transform: capitalize;
+        }
+
+        h5 {
+          color: var.$sand;
+        }
+      }
+      p {
+        color: var.$white;
+      }
+    }
+  }
+}

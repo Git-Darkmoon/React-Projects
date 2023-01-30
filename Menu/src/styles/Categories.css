@@ -1,0 +1,22 @@
+.category-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+.category-btn-container .categoryBtn {
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: #efcfa0;
+  border: none;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+.category-btn-container .categoryBtn:hover {
+  background-color: #c59d5f;
+  color: hsl(36deg, 71%, 88%);
+}/*# sourceMappingURL=Categories.css.map */
