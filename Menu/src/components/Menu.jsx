@@ -1,11 +1,11 @@
 import React from "react"
-import menuProducts from "../data"
+// import menuProducts from "../data"
 import "../styles/Menu.css"
 
-function Menu() {
+function Menu({ products }) {
   return (
     <div className="products">
-      {menuProducts.map((eachProduct) => {
+      {products.map((eachProduct) => {
         const { id, title, price, img, desc } = eachProduct
 
         return (

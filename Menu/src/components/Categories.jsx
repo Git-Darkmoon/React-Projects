@@ -8,11 +8,20 @@ const menuCategories = menuProducts.map((item) => {
 
 const categories = ["all", ...new Set(menuCategories)]
 
-function Categories() {
+function Categories({ filterFood }) {
   return (
     <div className="category-btn-container">
-      {categories.map((eachItem) => {
-        return <button className="categoryBtn">{eachItem}</button>
+      {categories.map((category, index) => {
+        return (
+          <button
+            type="button"
+            key={index}
+            className="categoryBtn"
+            onClick={() => filterFood(category)}
+          >
+            {category}
+          </button>
+        )
       })}
     </div>
   )
