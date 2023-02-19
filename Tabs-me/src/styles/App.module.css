@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  margin-top: 5rem;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header .title {
+  font-weight: 300;
+  font-size: 38px;
+}
+
+header .underline {
+  width: 3.25rem;
+  height: 0.25rem;
+  background-color: var(--primary);
+}

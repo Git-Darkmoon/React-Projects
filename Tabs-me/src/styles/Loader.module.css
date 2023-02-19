@@ -1,0 +1,52 @@
+.wrapper {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.spinner {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(35%, rgb(186, 66, 255)),
+    to(rgb(0, 225, 255))
+  );
+  background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+  width: 9.375rem;
+  height: 9.375rem;
+  -webkit-animation: spinning 1.7s linear infinite;
+  animation: spinning 1.7s linear infinite;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  -webkit-box-shadow: 0px -5px 20px 0px rgb(186, 66, 255),
+    0px 5px 20px 0px rgb(0, 225, 255);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255),
+    0px 5px 20px 0px rgb(0, 225, 255);
+}
+
+.spinner1 {
+  background-color: rgb(36, 36, 36);
+  width: 9.375rem;
+  height: 9.375rem;
+  border-radius: 50%;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
+
+@-webkit-keyframes spinning {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinning {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
