@@ -1,6 +1,11 @@
 :root {
   --bgColor: #242131;
+  --bgColor_Bright: hsl(251, 20%, 36%);
+  --bgColor_Light: hsl(251, 20%, 60%);
+
   --primary: #746cfe;
   --secondary: #ae8cfa;
   --white: hsl(251, 22%, 90%);
+
+  --midTitle: 1.375rem;
 }

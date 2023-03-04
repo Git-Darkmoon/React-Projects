@@ -7,13 +7,14 @@
 body {
   color: var(--white);
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 
 header {
-  margin-top: 5rem;
+  margin-top: 80px;
   display: flex;
   width: 100vw;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -23,7 +24,84 @@ header .title {
 }
 
 header .underline {
-  width: 3.25rem;
-  height: 0.25rem;
+  width: 68px;
+  height: 4px;
   background-color: var(--primary);
+}
+
+.container {
+  width: 80vw;
+
+  display: flex;
+  gap: 112px;
+
+  margin-block: 48px;
+  margin-inline: 160px;
+}
+
+.container .btnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.container .btnContainer > button {
+  font-size: var(--midTitle);
+  font-weight: 100;
+  text-align: center;
+  padding-inline: 32px;
+
+  color: var(--white);
+  border: none;
+
+  cursor: pointer;
+
+  background-color: transparent;
+  transition: all 0.5s ease-out;
+}
+
+.container .btnContainer > button:focus {
+  box-shadow: -0.25rem 0 var(--primary);
+  color: var(--primary);
+}
+
+.jobsContainer article .jobTitle {
+  font-size: var(--midTitle);
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+}
+
+.jobsContainer article .company {
+  background-color: var(--bgColor_Bright);
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+
+  font-weight: 600;
+  color: var(--bgColor_Light);
+
+  border-radius: 0.35rem;
+
+  display: inline-block;
+
+  margin-block: 1rem;
+}
+
+.jobsContainer article .jobDate {
+  margin-block: 0.75rem;
+  font-weight: 100;
+  letter-spacing: 0.25rem;
+}
+
+.duty {
+  list-style-type: none;
+
+  color: var(--bgColor_Light);
+  margin-bottom: 1.35rem;
+  text-align: justify;
+}
+
+.duty .jobIcon {
+  margin-right: 1rem;
+  color: var(--secondary);
+  font-weight: 700;
 }
