@@ -8,6 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [jobs, setJobs] = useState([])
   const [jobIndex, setJobIndex] = useState(0)
+
   const fetchJobs = async () => {
     const response = await fetch(URL)
     const jobsData = await response.json()
@@ -36,9 +37,14 @@ function App() {
       <main className={styles.container}>
         {/* btn container */}
         <section className={styles.btnContainer}>
-          {jobs.reverse().map((job, index) => {
+          {jobs.reverse().map((job) => {
             return (
-              <button key={job.id} onClick={() => setJobIndex(job.order - 1)}>
+              <button
+                key={job.id}
+                onClick={() => {
+                  setJobIndex(job.order - 1)
+                }}
+              >
                 {job.company}
               </button>
             )

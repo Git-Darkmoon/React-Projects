@@ -60,6 +60,10 @@ header .underline {
   transition: all 0.5s ease-out;
 }
 
+.container .btnContainer > button:hover {
+  color: var(--secondary);
+}
+
 .container .btnContainer > button:focus {
   box-shadow: -0.25rem 0 var(--primary);
   color: var(--primary);
