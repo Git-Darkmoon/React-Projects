@@ -136,6 +136,7 @@ p {
 Slider
 ===============
 */
+
 .title {
   text-align: center;
   margin-bottom: 2rem;
@@ -152,19 +153,9 @@ Slider
   margin-right: 1rem;
   font-weight: 700;
 }
-.section-center {
-  margin: 0 auto;
-  margin-top: 4rem;
-  width: 80vw;
-  /* have to have a height */
-  height: 450px;
-  max-width: 800px;
-  text-align: center;
-  position: relative;
-  display: flex;
-  overflow: hidden;
-}
+
 .person-img {
+  margin: 0 auto;
   border-radius: 50%;
   margin-bottom: 1rem;
   width: 150px;
@@ -173,7 +164,7 @@ Slider
   border: 4px solid var(--clr-grey-8);
   box-shadow: var(--dark-shadow);
 }
-article h4 {
+article h3 {
   text-transform: uppercase;
   color: var(--clr-primary-5);
   margin-bottom: 0.25rem;
@@ -233,22 +224,21 @@ article h4 {
     font-size: 1.5rem;
   }
 }
-article {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: var(--transition);
+
+/* ========== Slick Carousel ============ */
+
+.slick-container {
+  margin: 0 auto;
+  margin-top: 10rem;
+  width: 80vw;
+  max-width: 50rem;
+
+  text-align: center;
 }
-article.activeSlide {
-  opacity: 1;
-  transform: translateX(0);
+
+.slick-prev::before {
+  color: var(--clr-primary-5) !important;
 }
-article.lastSlide {
-  transform: translateX(-100%);
-}
-article.nextSlide {
-  transform: translateX(100%);
+.slick-next::before {
+  color: var(--clr-primary-5) !important;
 }
