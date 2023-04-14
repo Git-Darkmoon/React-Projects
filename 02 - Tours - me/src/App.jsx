@@ -14,6 +14,7 @@ const App = () => {
     const newUsers = tours.filter((eachTour) => eachTour.id !== id)
     setTours(newUsers)
   }
+
   const fetchData = async () => {
     setLoading(true)
 
