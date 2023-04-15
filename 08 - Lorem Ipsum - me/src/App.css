@@ -1,0 +1,109 @@
+:root {
+  --clr-primary: #646cff;
+  --clr-secondary: #535bf2;
+  --clr-black-light: #343434;
+  --clr-black-dark: #1a1a1a;
+  --clr-white: #ededed;
+
+  --stroke-width: calc(1em / 16);
+  --font-size: 10vmin;
+  --font-weight: 700;
+  --radius: 0.25rem;
+}
+
+body {
+  background-color: var(--clr-black-dark);
+  font-family: sans-serif;
+}
+
+.section-center {
+  text-transform: capitalize;
+
+  text-align: center;
+  margin-top: 10vmin;
+  color: var(--clr-white);
+}
+
+.section-title {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#09f1b8),
+    color-stop(#00a2ff),
+    color-stop(#ff00d2),
+    to(#fed90f)
+  );
+  background-image: -o-linear-gradient(
+    left,
+    #09f1b8,
+    #00a2ff,
+    #ff00d2,
+    #fed90f
+  );
+  background-image: linear-gradient(
+    to right,
+    #09f1b8,
+    #00a2ff,
+    #ff00d2,
+    #fed90f
+  );
+  color: var(--clr-black-dark);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  letter-spacing: 2px;
+  padding: calc(var(--stroke-width) / 2);
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: var(--stroke-width);
+}
+
+.section-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1vmin;
+}
+
+.section-form label,
+input,
+button {
+  font-size: 2.5vmin;
+}
+
+.section-form input {
+  width: 3rem;
+  text-align: center;
+  background-color: var(--clr-black-light);
+  outline: none;
+  border: none;
+
+  padding: 0.25rem 0.35rem;
+  border-radius: var(--radius);
+  color: var(--clr-primary);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.section-form .btn {
+  background-color: var(--clr-secondary);
+  border: none;
+  border-radius: var(--radius);
+  padding-inline: 0.5rem;
+  padding-block: 0.25rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: var(--clr-black-dark);
+}
+
+.section-form .btn:hover {
+  scale: 1.05;
+}
