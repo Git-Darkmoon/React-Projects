@@ -1,9 +1,10 @@
 :root {
   --clr-primary: #646cff;
   --clr-secondary: #535bf2;
+  --clr-pink: #fc7593;
   --clr-black-light: #343434;
   --clr-black-dark: #1a1a1a;
-  --clr-white: #ededed;
+  --clr-white: #ece8df;
 
   --stroke-width: calc(1em / 16);
   --font-size: 10vmin;
@@ -25,31 +26,25 @@ body {
 }
 
 .section-title {
+  margin: 1rem;
   -webkit-background-clip: text;
   background-clip: text;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#09f1b8),
-    color-stop(#00a2ff),
-    color-stop(#ff00d2),
-    to(#fed90f)
+  background-image: -webkit-linear-gradient(
+    315deg,
+    var(--clr-pink) 35%,
+    var(--clr-primary)
   );
   background-image: -o-linear-gradient(
-    left,
-    #09f1b8,
-    #00a2ff,
-    #ff00d2,
-    #fed90f
+    315deg,
+    var(--clr-pink) 35%,
+    var(--clr-primary)
   );
   background-image: linear-gradient(
-    to right,
-    #09f1b8,
-    #00a2ff,
-    #ff00d2,
-    #fed90f
+    315deg,
+    var(--clr-pink) 25%,
+    var(--clr-primary)
   );
+
   color: var(--clr-black-dark);
   font-size: var(--font-size);
   font-weight: var(--font-weight);
@@ -57,6 +52,9 @@ body {
   padding: calc(var(--stroke-width) / 2);
   -webkit-text-stroke-color: transparent;
   -webkit-text-stroke-width: var(--stroke-width);
+
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .section-form {
@@ -65,12 +63,13 @@ body {
   justify-content: center;
 
   gap: 1vmin;
+  margin-block: 2rem;
 }
 
 .section-form label,
 input,
 button {
-  font-size: 2.5vmin;
+  font-size: 2.55vmin;
 }
 
 .section-form input {
@@ -106,4 +105,26 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .section-form .btn:hover {
   scale: 1.05;
+}
+
+.section-paragraphs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.section-paragraphs .paragraph {
+  min-width: 30vmin;
+  max-width: 50vmin;
+  align-self: stretch;
+  text-align: justify;
+  color: var(--clr-white);
+}
+
+.section-paragraphs .paragraph .paragraph-index {
+  color: var(--clr-pink);
+  text-shadow: 0px 0px 12px var(--clr-primary);
 }
