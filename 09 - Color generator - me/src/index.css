@@ -1,0 +1,84 @@
+:root {
+  font-family: "Nanum Gothic", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: hsl(249, 5%, 14%);
+  color: #f9f9f9;
+}
+
+header {
+  width: 98vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .title {
+  font-size: 5vmin;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.section-form .form-options {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.section-form .form-options input[type=color] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 4rem;
+  height: 4rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.section-form .form-options input[type=color]::-webkit-color-swatch {
+  border-radius: 0.75rem;
+  border: none;
+}
+.section-form .form-options input[type=text],
+.section-form .form-options #submitBtn {
+  font-size: 3vmin;
+  border-radius: 0.25rem;
+}
+.section-form .form-options input[type=text] {
+  padding: 0.35rem;
+  outline: none;
+}
+.section-form .form-options #submitBtn {
+  background-color: #646cff;
+  color: #f9f9f9;
+  padding: 0.45rem;
+  transition: all 0.3s linear;
+}
+.section-form .form-options #submitBtn:hover {
+  scale: 1.05;
+  background-color: #535bf2;
+}
+
+.section-colors {
+  width: 98vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.section-colors .color {
+  text-align: center;
+}
+.section-colors .color-visualize {
+  width: 7rem;
+  height: 7rem;
+  background-color: #646cff;
+  border-radius: 50%;
+}/*# sourceMappingURL=index.css.map */
