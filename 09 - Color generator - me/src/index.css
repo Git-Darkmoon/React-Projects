@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: hsl(249, 5%, 14%);
+  background-color: #222225;
   color: #f9f9f9;
 }
 
@@ -46,14 +46,17 @@ button {
   border-radius: 0.75rem;
   border: none;
 }
-.section-form .form-options input[type=text],
+.section-form .form-options input,
 .section-form .form-options #submitBtn {
   font-size: 3vmin;
   border-radius: 0.25rem;
 }
-.section-form .form-options input[type=text] {
+.section-form .form-options input {
   padding: 0.35rem;
   outline: none;
+}
+.section-form .form-options input[type=number] {
+  width: 10vmin;
 }
 .section-form .form-options #submitBtn {
   background-color: #646cff;

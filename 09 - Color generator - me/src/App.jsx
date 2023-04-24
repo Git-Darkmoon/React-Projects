@@ -1,6 +1,21 @@
-// import { useState } from "react"
+import { useState } from "react"
+
+import ColorList from "./ColorList"
+import Form from "./Form"
+import Values from "values.js"
 
 function App() {
+  const [colors, setColors] = useState(new Values("#646cff").all(25))
+
+  const addColor = (color, weight) => {
+    try {
+      const newColors = new Values(color).all(weight)
+      setColors(newColors)
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
   return (
     <section>
       <header>
@@ -9,37 +24,8 @@ function App() {
           <i className="fa-solid fa-moon"></i>
         </button>
       </header>
-      <form className="section-form">
-        <div className="form-options">
-          <input type="color" name="" id="colorInput" />
-          <input type="text" placeholder="#646cff" />
-          <button type="submit" id="submitBtn">
-            Generate
-          </button>
-        </div>
-      </form>
-      <section className="section-colors">
-        <article className="color">
-          <div className="color-visualize"></div>
-          <h3>#646cff</h3>
-          <h4>0%</h4>
-        </article>
-        <article className="color">
-          <div className="color-visualize"></div>
-          <h3>#646cff</h3>
-          <h4>0%</h4>
-        </article>
-        <article className="color">
-          <div className="color-visualize"></div>
-          <h3>#646cff</h3>
-          <h4>0%</h4>
-        </article>
-        <article className="color">
-          <div className="color-visualize"></div>
-          <h3>#646cff</h3>
-          <h4>0%</h4>
-        </article>
-      </section>
+      <Form addColor={addColor} />
+      <ColorList colors={colors} />
     </section>
   )
 }

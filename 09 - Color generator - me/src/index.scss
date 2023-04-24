@@ -1,4 +1,4 @@
-$clr-black: hsl(249, 5%, 14%);
+$clr-black: #222225;
 $clr-white: #f9f9f9;
 $clr-bone: #f8f8d8;
 $clr-purple: #646cff;
@@ -60,15 +60,19 @@ button {
       }
     }
 
-    input[type="text"],
+    input,
     #submitBtn {
       font-size: 3vmin;
       border-radius: $radius;
     }
 
-    input[type="text"] {
+    input {
       padding: 0.35rem;
       outline: none;
+    }
+
+    input[type="number"] {
+      width: 10vmin;
     }
 
     #submitBtn {
