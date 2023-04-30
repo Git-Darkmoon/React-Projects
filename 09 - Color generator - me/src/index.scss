@@ -1,14 +1,15 @@
-$clr-black: #222225;
-$clr-white: #f9f9f9;
 $clr-bone: #f8f8d8;
 $clr-purple: #646cff;
 $clr-purple2: #535bf2;
 
-$clr-primary: $clr-black;
-$clr-secondary: $clr-white;
-
 $radius: 0.25rem;
 $transition: all 0.3s linear;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 :root {
   font-family: "Nanum Gothic", sans-serif;
@@ -17,21 +18,40 @@ $transition: all 0.3s linear;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --clr-black: #222225;
+  --clr-white: #f9f9f9;
+  --clr-primary: var(--clr-black);
+  --clr-secondary: var(--clr-white);
+  overflow-x: hidden;
 }
 
-body {
-  background-color: $clr-primary;
-  color: $clr-secondary;
+.container {
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
+  width: 100vw;
+  height: 100vh;
 }
 
 header {
-  width: 98vw;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-inline: 2rem;
+  padding-top: 5vmin;
 
   .title {
     font-size: 5vmin;
+  }
+
+  .themeBtn {
+    font-size: 5vmin;
+    color: var(--clr-secondary);
+    transition: $transition;
+
+    text-align: center;
+    background-color: transparent;
   }
 }
 
@@ -44,6 +64,7 @@ button {
   .form-options {
     display: flex;
     align-items: center;
+    margin-inline: 2vmin;
     gap: 0.35rem;
 
     input[type="color"] {
@@ -77,7 +98,7 @@ button {
 
     #submitBtn {
       background-color: $clr-purple;
-      color: $clr-white;
+      color: var(--clr-white);
       padding: 0.45rem;
       transition: $transition;
 
@@ -90,20 +111,65 @@ button {
 }
 
 .section-colors {
-  width: 98vw;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 
   margin-top: 2rem;
+  margin-inline: 5vmin;
 
   .color {
     text-align: center;
   }
   .color-visualize {
-    width: 7rem;
-    height: 7rem;
+    position: relative;
+    width: 15vmin;
+    height: 15vmin;
     background-color: $clr-purple;
     border-radius: 50%;
+
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+
+    transition: $transition;
+
+    &:hover {
+      scale: 1.1;
+    }
+
+    &:hover .copy-icon {
+      opacity: 1;
+    }
   }
+
+  .copy-icon {
+    font-size: 2rem;
+    opacity: 0;
+    transition: $transition;
+  }
+
+  .lightFont {
+    color: $clr-bone;
+  }
+
+  .darkFont {
+    color: var(--clr-black);
+  }
+}
+
+.test {
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary);
+
+  button {
+    display: block;
+    background-color: $clr-purple;
+  }
+}
+
+.themeChanger {
+  --clr-primary: $clr-black;
+  --clr-secondary: $clr-white;
 }

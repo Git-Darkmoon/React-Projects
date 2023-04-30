@@ -5,8 +5,8 @@ import SingleColor from "./SingleColor"
 function ColorList({ colors }) {
   return (
     <section className="section-colors">
-      {colors.map((color) => {
-        return <SingleColor key={uuid()} color={color} />
+      {colors.map((color, index) => {
+        return <SingleColor key={uuid()} color={color} index={index} />
       })}
     </section>
   )
