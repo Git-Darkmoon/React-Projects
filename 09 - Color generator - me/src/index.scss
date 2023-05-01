@@ -5,6 +5,12 @@ $clr-purple2: #535bf2;
 $radius: 0.25rem;
 $transition: all 0.3s linear;
 
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -20,7 +26,7 @@ $transition: all 0.3s linear;
   -webkit-text-size-adjust: 100%;
 
   --clr-black: #222225;
-  --clr-white: #f9f9f9;
+  --clr-white: #eee;
   --clr-primary: var(--clr-black);
   --clr-secondary: var(--clr-white);
   overflow-x: hidden;
@@ -30,7 +36,13 @@ $transition: all 0.3s linear;
   background-color: var(--clr-primary);
   color: var(--clr-secondary);
   width: 100vw;
-  height: 100vh;
+  height: 100vmin;
+}
+
+@media (width <= 806px) {
+  .container {
+    height: fit-content;
+  }
 }
 
 header {
@@ -112,15 +124,19 @@ button {
 
 .section-colors {
   width: 100vw;
-  display: flex;
+  @include flexCenter();
   flex-wrap: wrap;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(min(15vmin, 100%), 1fr));
+
   gap: 2rem;
 
-  margin-top: 2rem;
-  margin-inline: 5vmin;
+  margin-top: 1.25rem;
 
   .color {
-    text-align: center;
+    @include flexCenter();
+    flex-direction: column;
+    gap: 0.5rem;
   }
   .color-visualize {
     position: relative;
@@ -144,6 +160,9 @@ button {
     }
   }
 
+  .sombrita {
+    box-shadow: 0px 0px 1rem #eee;
+  }
   .copy-icon {
     font-size: 2rem;
     opacity: 0;
