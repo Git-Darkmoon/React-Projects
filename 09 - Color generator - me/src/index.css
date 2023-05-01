@@ -30,6 +30,12 @@
     height: -moz-fit-content;
     height: fit-content;
   }
+  .color h3 {
+    font-size: 2.75vmin;
+  }
+  .color h4 {
+    font-size: 2vmin;
+  }
 }
 header {
   width: 100vw;

@@ -44,7 +44,7 @@ function App() {
       </header>
       <Form addColor={addColor} />
       <ColorList colors={colors} />
-      <ToastContainer position="top-center" limit={3} draggablePercent={50} />
+      <ToastContainer position="top-center" limit={3} draggablePercent={30} />
     </section>
   )
 }
