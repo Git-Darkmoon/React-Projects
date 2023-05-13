@@ -5,9 +5,17 @@ import logo from "./assets/logo.png"
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="logo">
-        <img src={logo} alt="" />
+      <div className="nav-header">
+        <div className="logo">
+          <img src={logo} alt="" />
+        </div>
+        <div className="burger">
+          <div className="burgerLine1"></div>
+          <div className="burgerLine2"></div>
+          <div className="burgerLine3"></div>
+        </div>
       </div>
+
       <div className="links__container">
         <ul className="links">
           <li>
@@ -23,33 +31,28 @@ function Navbar() {
             <a href="">Info</a>
           </li>
         </ul>
-      </div>
-      <ul className="social__icons">
-        <li>
-          <a href="">
-            <FaFacebook />
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <FaTwitter />
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <FaLinkedin />
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <FaGithub />
-          </a>
-        </li>
-      </ul>
-      <div className="burger">
-        <div className="burgerLine1"></div>
-        <div className="burgerLine2"></div>
-        <div className="burgerLine3"></div>
+        <ul className="social__icons">
+          <li>
+            <a href="">
+              <FaFacebook />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <FaTwitter />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <FaLinkedin />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <FaGithub />
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   )
