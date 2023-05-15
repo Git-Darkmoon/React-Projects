@@ -29,7 +29,6 @@ img {
 .navbar {
   position: relative;
   width: 100vw;
-  height: 5rem;
   background-color: var(--clr-night);
   display: flex;
   align-items: center;
@@ -54,11 +53,16 @@ img {
 .links__container {
   background-color: var(--clr-night);
   width: 100%;
+  overflow: hidden;
+  transition: var(--transition);
 }
 .links__container .links li {
   padding-block: 1rem;
   cursor: pointer;
   transition: var(--transition);
+}
+.links__container .links li a {
+  text-transform: capitalize;
 }
 .links__container .links li:hover {
   background: var(--clr-white);
@@ -68,7 +72,6 @@ img {
   padding-left: 2rem;
 }
 .links__container .links li a {
-  display: block;
   color: var(--clr-grey);
   text-decoration: none;
   padding-left: 1rem;
@@ -91,17 +94,51 @@ img {
   height: 0.15rem;
   background-color: var(--clr-grey);
   transition: var(--transition);
+  transform-origin: left center;
 }
-.burger:hover .burgerLine1, .burger:hover .burgerLine3 {
+.burger.open div:nth-child(1) {
+  transform: rotate(45deg);
+}
+.burger.open div:nth-child(2) {
   opacity: 0;
+}
+.burger.open div:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 @media (width >= 50rem) {
   .burger {
     display: none;
   }
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+  }
+  .navbar .nav-header {
+    display: inline;
+    width: auto;
+  }
+  .navbar .nav-header img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
   .navbar .links__container {
-    display: flex;
+    width: auto;
+    height: auto !important;
+  }
+  .navbar .links__container .links li:hover {
+    background-color: inherit;
+    cursor: default;
+  }
+  .navbar .links__container .links li:hover a {
+    display: block;
+    padding-left: 1rem;
+    color: var(--clr-grey);
+  }
+  .navbar .links__container .links li:hover a:hover {
+    color: var(--clr-white);
   }
   .links__container .links,
   .social__icons li {

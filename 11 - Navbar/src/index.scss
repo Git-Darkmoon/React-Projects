@@ -36,7 +36,7 @@ img {
 .navbar {
   position: relative;
   width: 100vw;
-  height: 5rem;
+  // height: 5rem;
 
   background-color: var(--clr-night);
 
@@ -61,15 +61,19 @@ img {
 }
 
 .links__container {
-  //   display: block;
   background-color: var(--clr-night);
   width: 100%;
+  overflow: hidden;
+  transition: var(--transition);
 
   .links li {
-    // border-bottom: 0.1px solid var(--clr-grey);
     padding-block: 1rem;
     cursor: pointer;
     transition: var(--transition);
+
+    a {
+      text-transform: capitalize;
+    }
 
     &:hover {
       background: var(--clr-white);
@@ -81,7 +85,7 @@ img {
     }
 
     a {
-      display: block;
+      // display: block;
       color: var(--clr-grey);
       text-decoration: none;
       padding-left: 1rem;
@@ -106,10 +110,16 @@ img {
     height: 0.15rem;
     background-color: var(--clr-grey);
     transition: var(--transition);
+    transform-origin: left center;
   }
-  &:hover .burgerLine1,
-  &:hover .burgerLine3 {
+  &.open div:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  &.open div:nth-child(2) {
     opacity: 0;
+  }
+  &.open div:nth-child(3) {
+    transform: rotate(-45deg);
   }
 }
 
@@ -118,8 +128,40 @@ img {
     display: none;
   }
 
-  .navbar .links__container {
-    display: flex;
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+
+    .nav-header {
+      display: inline;
+      width: auto;
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    .links__container {
+      width: auto;
+      height: auto !important;
+
+      .links li:hover {
+        background-color: inherit;
+        cursor: default;
+
+        a {
+          display: block;
+          padding-left: 1rem;
+          color: var(--clr-grey);
+
+          &:hover {
+            color: var(--clr-white);
+          }
+        }
+      }
+    }
   }
 
   .links__container .links,
