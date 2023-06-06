@@ -1,10 +1,10 @@
-import { FaBars } from "react-icons/fa"
+import Home from "./Home"
 import Sidebar from "./Sidebar"
 
 function App() {
   return (
     <main>
-      <FaBars />
+      <Home />
       <Sidebar />
     </main>
   )
