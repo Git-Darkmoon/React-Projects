@@ -1,0 +1,134 @@
+:root {
+  --clr-primaryGreen: hsl(169, 64%, 47%);
+  --clr-secondaryGreen: hsl(169, 64%, 37%);
+  --clr-primaryBlue: hsl(197, 100%, 45%);
+  --clr-secondaryBlue: hsl(197, 100%, 35%);
+  --clr-accentPink: hsl(325, 100%, 71%);
+  --clr-spaceBlack: hsl(0, 0%, 14%);
+  --clr-cosmicWhite: hsl(169, 64%, 96.5%);
+  --clr-cosmicGray: hsl(0, 0%, 30%);
+  --ff-base: "Quicksand", sans-serif;
+  --fs-300: clamp(0.88rem, calc(0.8rem + 0.38vw), 1.25rem);
+  --fs-400: clamp(1.05rem, calc(0.91rem + 0.72vw), 1.77rem);
+  --fs-500: clamp(1.26rem, calc(1.01rem + 1.24vw), 2.5rem);
+  --fs-600: clamp(1.51rem, calc(1.11rem + 2.02vw), 3.53rem);
+  --fs-700: clamp(1.81rem, calc(1.18rem + 3.18vw), 5rem);
+  --fs-800: clamp(2.18rem, calc(1.2rem + 4.89vw), 7.07rem);
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --radius: 0.3rem;
+  --transition: all 0.35s ease-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-image: url("../assets/marbleBg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h2 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h3 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h4 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h5 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+header {
+  width: 100vw;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+header img {
+  height: 100%;
+  filter: grayscale(100%) contrast(105%);
+}
+
+.hero {
+  width: 95vw;
+  height: calc(100vh - 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+.hero .hero-left .hero-title {
+  font-size: var(--fs-700);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-bold);
+  color: var(--clr-cosmicGray);
+}
+.hero .hero-left .hero-body {
+  font-size: var(--fs-500);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-bold);
+  color: var(--clr-spaceBlack);
+  padding-left: var(--space-1);
+  border-left: 9px solid var(--clr-spaceBlack);
+}
+.hero .hero-right img {
+  width: 60vw;
+  max-height: 50vh;
+}
+
+@media (width >= 49.5rem) {
+  .hero {
+    /* 768px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .hero-right {
+    width: 40rem;
+  }
+  .hero-right img {
+    max-width: 60%;
+    margin: auto;
+    height: 100%;
+  }
+}/*# sourceMappingURL=index.css.map */
