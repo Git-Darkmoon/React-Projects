@@ -1,11 +1,13 @@
 :root {
-  --clr-primaryGreen: hsl(169, 64%, 47%);
-  --clr-secondaryGreen: hsl(169, 64%, 37%);
+  --clr-primaryGreen: hsl(113, 51%, 52%);
+  --clr-primaryYellow: hsl(56, 93%, 72%);
   --clr-primaryBlue: hsl(197, 100%, 45%);
-  --clr-secondaryBlue: hsl(197, 100%, 35%);
-  --clr-accentPink: hsl(325, 100%, 71%);
+
   --clr-spaceBlack: hsl(0, 0%, 14%);
-  --clr-cosmicWhite: hsl(169, 64%, 96.5%);
+  --clr-spaceGray: hsl(240deg 2.38% 83.53%);
+
+  --clr-cosmicWhite: hsl(0, 0%, 95%);
+  --clr-cosmicGlass: hsla(240deg, 2.38%, 83.53%, 0.25);
   --clr-cosmicGray: hsl(0, 0%, 30%);
 
   --ff-base: "Quicksand", sans-serif;
@@ -20,24 +22,23 @@
   --fw-regular: 400;
   --fw-bold: 700;
 
-  --space-1: 0.5rem;
-  --space-2: 1rem;
-  --space-3: 2rem;
+  --space-05: 0.5rem;
+  --space-1: 1rem;
+  --space-2: 2rem;
 
   --radius: 0.3rem;
 
   --transition: all 0.35s ease-out;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  display: block;
 }
 
 @mixin mpReset() {
@@ -66,10 +67,22 @@ img {
 body {
   line-height: 1.6;
   @include mpReset();
-  background-image: url("../assets/marbleBg.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+
+  background-color: var(--clr-spaceBlack);
+
+  overflow-x: hidden;
+}
+
+body > * > * {
+  ::selection {
+    background-color: var(--clr-spaceBlack);
+    color: var(--clr-primaryGreen);
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 @for $i from 1 through 6 {
@@ -81,7 +94,8 @@ body {
 
 header {
   width: 100vw;
-  height: 6rem;
+  height: 7rem;
+  padding-top: 1rem;
 
   @include flexCenter();
 
@@ -91,9 +105,16 @@ header {
   }
 }
 
+.principal {
+  width: 100vw;
+  height: 100vh;
+
+  background: url("../assets/marbleBg.jpg") center/cover no-repeat /* fixed */;
+}
+
 .hero {
-  width: 95vw;
-  height: calc(100vh - 6rem);
+  width: 100vw;
+  height: calc(100vh - 7rem);
 
   @include flexCenter(column);
 
@@ -107,7 +128,7 @@ header {
     .hero-body {
       @include fontBold(var(--fs-500));
       color: var(--clr-spaceBlack);
-      padding-left: var(--space-1);
+      padding-left: var(--space-05);
       border-left: 9px solid var(--clr-spaceBlack);
     }
   }
@@ -128,9 +149,165 @@ header {
   .hero-right {
     width: 40rem;
     img {
-      max-width: 60%;
-      margin: auto;
+      max-width: 70%;
       height: 100%;
+      aspect-ratio: 10/16;
+      margin: auto;
     }
   }
 }
+
+.characters-container {
+  width: 100vw;
+  // height: 100%;
+  @include flexCenter(column);
+  margin: auto;
+}
+
+.characters-title {
+  @include fontBold(var(--fs-700));
+  color: var(--clr-spaceGray);
+  text-align: center;
+}
+
+.character-card > * {
+  color: var(--clr-cosmicWhite);
+  font-family: var(--ff-base);
+}
+
+.character-card {
+  background: var(--clr-cosmicGlass);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+
+  width: 75vmin;
+
+  margin: auto;
+  margin-bottom: 2rem;
+
+  padding-inline: var(--space-1);
+  padding-block-start: var(--space-2);
+  padding-block-end: var(--space-1);
+
+  border-radius: calc(var(--radius) * 2);
+
+  .character-avatarContainer {
+    width: 100%;
+
+    .character-avatarPic {
+      width: 100%;
+      border-radius: var(--radius);
+    }
+  }
+
+  .character-info {
+    .character-name {
+      font-size: var(--fs-500);
+      margin-bottom: -1rem;
+    }
+
+    .character-state {
+      display: flex;
+      align-items: center;
+      gap: var(--space-05);
+
+      .character-stateIndicator {
+        width: var(--space-05);
+        height: var(--space-05);
+        background-color: var(--clr-spaceGray);
+        border-radius: 100%;
+        box-shadow: 0px 0px 7px var(--clr-spaceGray);
+        transition: var(--transition);
+      }
+
+      .alive {
+        background-color: var(--clr-primaryGreen);
+        box-shadow: 0px 0px 7px var(--clr-primaryGreen);
+      }
+      .dead {
+        background-color: hsl(0, 100%, 63%);
+        box-shadow: 0px 0px 7px #f44;
+      }
+
+      .character-stateInfo {
+        font-size: var(--fs-300);
+        color: var(--clr-cosmicGlass);
+      }
+    }
+
+    .btnContainer {
+      display: flex;
+      justify-content: flex-end;
+
+      .characterDetailsBtn {
+        border: none;
+        border-radius: var(--radius);
+
+        padding-block: 0.75rem;
+        padding-inline: var(--space-2);
+        background-color: var(--clr-spaceBlack);
+
+        @include fontBold(var(--fs-400));
+
+        color: var(--clr-cosmicGray);
+        transition: var(--transition);
+        cursor: pointer;
+
+        &:hover {
+          scale: 1.05;
+          color: var(--clr-primaryYellow);
+          box-shadow: 0px 0px 7px var(--clr-primaryGreen);
+        }
+
+        &:active {
+          scale: 1;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+@media (width >= 33rem) {
+  .character-card {
+    .character-avatarContainer {
+      width: 50vmin;
+      margin: auto;
+      img {
+        width: 100vw;
+      }
+    }
+  }
+}
+@media (width >= 48rem) {
+  .characters-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin: 0;
+    gap: var(--space-1);
+  }
+
+  .character-card {
+    width: 32rem;
+    height: 30vmin;
+    @include flexCenter();
+    justify-content: space-center;
+    gap: var(--space-2);
+
+    .character-avatarContainer {
+      width: 25vmin;
+      margin: 0;
+    }
+  }
+}
+
+// .q {
+//   width: 20rem;
+//   height: 20rem;
+//   background-color: crimson;
+// }
