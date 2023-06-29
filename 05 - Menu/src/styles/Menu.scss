@@ -1,28 +1,39 @@
 @use "./variables" as var;
 
-.products {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  row-gap: 2rem;
+// Styles are applied for Mobile First
 
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
   margin-block: 3rem;
+  padding-inline: 1.5rem;
 
   font-family: var.$font-family_Roboto;
 
   .card {
     display: flex;
-    max-width: 45rem;
-    max-height: 22.5rem;
-    gap: 2rem;
+    max-width: 65vmax;
+    height: fit-content;
+    padding: 1rem;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    background-color: var.$black_dark;
 
     img {
-      width: 25rem;
+      width: 25vmax;
+      object-fit: cover;
       border-radius: 0.2rem;
-      opacity: 0.5;
+      opacity: 0.75;
       transition: var.$transition;
 
       &:hover {
-        scale: 1.05;
+        scale: 1.035;
         opacity: 1;
       }
     }
@@ -39,23 +50,32 @@
         h2 {
           color: var.$gold-dark;
           text-transform: capitalize;
+          text-wrap: balance;
         }
 
-        h5 {
+        h4 {
           color: var.$sand;
         }
       }
       p {
         color: var.$white;
-        text-align: justify;
       }
     }
   }
 }
 
-@media screen and (min-width: 900px) {
+@media (width >= 60rem) {
   .products {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .card {
+      max-width: 45vmax;
+      height: 20vmax;
+
+      img {
+        width: 20vmax;
+      }
+    }
   }
 }

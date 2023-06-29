@@ -5,15 +5,15 @@ const menu = [
     category: "breakfast",
     price: 15.99,
     img: "./src/assets/images/item-1.jpeg",
-    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+    desc: "Indulge in heavenly Buttermilk Pancakes, a divine blend of fluffiness and rich flavors. Elevate your breakfast experience today!",
   },
   {
     id: 2,
-    title: "diner double",
+    title: "Wagyu Delight Burger",
     category: "lunch",
     price: 13.99,
     img: "./src/assets/images/item-2.jpeg",
-    desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
+    desc: "Savor the exquisite Wagyu Delight Burger, a gourmet masterpiece. Juicy, tender, and bursting with succulent flavors. Pure luxury on a bun!",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const menu = [
     category: "shakes",
     price: 6.99,
     img: "./src/assets/images/item-3.jpeg",
-    desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
+    desc: "Unleash your taste buds with the epic Godzilla Milkshake. A towering blend of creamy goodness that will leave you craving more. Conquer your dessert desires!",
   },
   {
     id: 4,
@@ -29,15 +29,15 @@ const menu = [
     category: "breakfast",
     price: 20.99,
     img: "./src/assets/images/item-4.jpeg",
-    desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
+    desc: "Start your mornings with the delightful Country Delight breakfast. Rustic flavors, farm-fresh ingredients, and a comforting touch of homestyle goodness.",
   },
   {
     id: 5,
-    title: "egg attack",
+    title: "Alioli Beefegg",
     category: "lunch",
     price: 22.99,
     img: "./src/assets/images/item-5.jpeg",
-    desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
+    desc: "Indulge in the irresistible Alioli Beef n Egg burger. A mouthwatering fusion of juicy beef, creamy alioli, and a perfectly cooked egg. Pure burger bliss!",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const menu = [
     category: "shakes",
     price: 18.99,
     img: "./src/assets/images/item-6.jpeg",
-    desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
+    desc: "Embark on a dreamy journey with the Oreo Dream milkshake. Rich, velvety, and packed with cookie goodness. A milkshake that will make your taste buds dance!",
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const menu = [
     category: "breakfast",
     price: 8.99,
     img: "./src/assets/images/item-7.jpeg",
-    desc: `carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird `,
+    desc: "Experience breakfast bliss with the Bacon Overflow souffle egg sandwich. Fluffy eggs, crispy bacon, and a burst of savory flavors in every bite. Breakfast elevated!",
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ const menu = [
     category: "lunch",
     price: 12.99,
     img: "./src/assets/images/item-8.jpeg",
-    desc: `on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  `,
+    desc: "Indulge in the American Classic: a timeless hamburger paired with golden crispy fries. A mouthwatering combo that captures the essence of culinary nostalgia.",
   },
   {
     id: 9,
@@ -69,7 +69,7 @@ const menu = [
     category: "shakes",
     price: 16.99,
     img: "./src/assets/images/item-9.jpeg",
-    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+    desc: "Find comfort in the Quarantine Buddy milkshake, a delicious treat designed to be shared. Sweet moments, double the joy, and a delightful escape together.",
   },
 ]
 export default menu

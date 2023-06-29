@@ -14,7 +14,7 @@ function Menu({ products }) {
             <article className="info">
               <header>
                 <h2>{title}</h2>
-                <h5>$ {price}</h5>
+                <h4>${price}</h4>
               </header>
               <p>{desc}</p>
             </article>

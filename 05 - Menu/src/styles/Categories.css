@@ -17,9 +17,9 @@
   transition: all 0.3s ease;
 }
 .category-btn-container .categoryBtn:hover {
-  background-color: hsl(36deg, 47%, 57%);
-  color: hsl(36deg, 71%, 88%);
+  background-color: hsl(36, 47%, 57%);
+  color: hsl(36, 71%, 88%);
 }
 .category-btn-container .categoryBtn:focus {
-  border: 0.65px solid hsl(36deg, 47%, 57%);
+  outline: 0.65px solid hsl(36, 47%, 57%);
 }/*# sourceMappingURL=Categories.css.map */
