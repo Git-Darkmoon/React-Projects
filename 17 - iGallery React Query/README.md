@@ -1,0 +1,2 @@
+# iGallery-App
+iGallery is a sleek and responsive web application developed using React JS and SCSS. This project showcases a gallery UI that seamlessly supports both light and dark themes. Users can input prompts of their choice, and iGallery will present them with a stunning collection of images related to their input. The application leverages React Query library for efficient state management, while axios handles seamless integration with the Unsplash API for fetching images. Immerse yourself in a personalized gallery experience with iGallery.
