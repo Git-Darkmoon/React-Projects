@@ -1,0 +1,14 @@
+@use "./variables";
+
+@mixin flexCenter($justify, $direction: row) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin layout() {
+  width: 100%;
+  height: var(--layout-height);
+  @include flexCenter(center);
+}
