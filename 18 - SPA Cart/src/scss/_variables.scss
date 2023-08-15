@@ -1,0 +1,26 @@
+:root {
+  // Colors
+  --clr-black: #181818;
+  --clr-white: #f4f0ff;
+  --clr-grey: hsla(0, 0%, 50%, 0.4);
+  --clr-accent: #8c66ff;
+  --clr-active: #ee82ee;
+
+  // Font
+  --ff-base: "Inter", sans-serif;
+
+  --fs-0: clamp(0.73rem, calc(0.66rem + 0.31vw), 0.94rem);
+  --fs-1: clamp(0.88rem, calc(0.79rem + 0.37vw), 1.13rem);
+  --fs-2: clamp(1.05rem, calc(0.95rem + 0.44vw), 1.35rem);
+  --fs-3: clamp(1.26rem, calc(1.14rem + 0.53vw), 1.62rem);
+  --fs-4: clamp(1.51rem, calc(1.37rem + 0.63vw), 1.94rem);
+  --fs-5: clamp(1.81rem, calc(1.65rem + 0.76vw), 2.33rem);
+  --fs-6: clamp(2.18rem, calc(1.98rem + 0.91vw), 2.8rem);
+
+  // Sizes
+  --pd-x: 3rem;
+  --layout-height: 4rem;
+
+  // Transition
+  --transition: all 0.25s ease-in-out;
+}
