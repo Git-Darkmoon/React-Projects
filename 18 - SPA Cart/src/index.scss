@@ -1,0 +1,57 @@
+@use "./scss/variables";
+@use "./scss/reset";
+@use "./scss/mixins" as mixins;
+
+:root {
+  font-family: var(--ff-base);
+}
+
+body {
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+
+  padding-inline: var(--pd-x);
+}
+
+.navbar {
+  @include mixins.layout();
+  justify-content: space-between;
+  border-bottom: 1px solid var(--clr-grey);
+
+  .linksList {
+    display: flex;
+    gap: 3rem;
+  }
+  .links {
+    color: var(--clr-grey);
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--clr-active);
+    }
+  }
+
+  /*   This active class exists for react-router,
+  it is not explicit in the code. */
+  .active {
+    color: var(--clr-accent);
+    transition: var(--transition);
+    &:hover {
+      color: var(--clr-accent);
+    }
+  }
+}
+
+.footer {
+  @include mixins.layout();
+
+  #github_link {
+    color: var(--clr-accent);
+    padding-inline: 0.25em;
+    transition: var(--transition);
+
+    &:hover {
+      color: violet;
+    }
+  }
+}
