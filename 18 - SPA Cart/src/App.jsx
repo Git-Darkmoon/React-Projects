@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import PageLayout from "./Pages/PageLayout"
 import Tours from "./Pages/Tours"
-import Cart from "./Pages/Cart"
+import TourInfo from "./Pages/TourInfo"
 import ErrorPage from "./Pages/ErrorPage"
 
 const router = createBrowserRouter([
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       {
-        path: "cart/:id",
-        element: <Cart />,
+        path: "tourInfo/:id",
+        element: <TourInfo />,
         errorElement: <ErrorPage />,
       },
     ],
