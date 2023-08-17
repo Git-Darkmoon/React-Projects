@@ -55,3 +55,100 @@ body {
     }
   }
 }
+
+.tours-container {
+  width: 100%;
+  height: 100%;
+
+  padding-block: 1.75rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  gap: 3rem;
+}
+
+.tourCard {
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-grey);
+  padding: 1rem;
+  transition: var(--transition);
+  position: relative;
+
+  &:hover .tour-img {
+    opacity: 1;
+  }
+
+  &:hover {
+    scale: 1.015;
+  }
+
+  .tour-img {
+    opacity: 0.75;
+    transition: var(--transition);
+  }
+
+  .tour-name {
+    padding-block: 1rem;
+  }
+
+  .btns-container {
+    @include mixins.flexCenter(end);
+    gap: 1rem;
+
+    .tourBtn {
+      padding-inline: 1rem;
+      padding-block: 0.5rem;
+      transition: var(--transition);
+    }
+
+    #addCart {
+      background-color: var(--clr-accent);
+      &:hover {
+        background-color: var(--clr-accent-hover);
+      }
+    }
+
+    #details {
+      background-color: var(--clr-grey);
+      &:hover {
+        background-color: var(--clr-grey-hover);
+      }
+    }
+  }
+
+  &::before {
+    content: attr(data-price);
+    color: #fff;
+    position: absolute;
+    padding: 0.5rem 1rem;
+    top: 0;
+    transition: var(--transition);
+    opacity: 0;
+  }
+
+  &:hover::before {
+    top: -1.15rem;
+    opacity: 1;
+    background-color: var(--clr-active);
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+  }
+}
+
+.about {
+  margin: 0 auto;
+  max-width: 70ch;
+  height: calc(100dvh - var(--layout-height) * 2);
+
+  @include mixins.flexCenter(center, column);
+
+  p {
+    padding-block: 1rem;
+    opacity: 0.85;
+  }
+
+  .last-p {
+    align-self: flex-start;
+    opacity: 0.5;
+  }
+}
