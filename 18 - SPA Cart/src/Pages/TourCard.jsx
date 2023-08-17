@@ -1,4 +1,6 @@
-function TourCard({ image, name, price }) {
+import { Link } from "react-router-dom"
+
+function TourCard({ id, image, name, price }) {
   return (
     <article className="tourCard" data-price={`$ ${price}`}>
       <img
@@ -9,11 +11,16 @@ function TourCard({ image, name, price }) {
         height={300}
       />
       <h2 className="tour-name">{name.split(" ").slice(0, 3).join(" ")}</h2>
-      {/* <h4 className="tour-price">$ {price}</h4> */}
       <div className="btns-container">
-        <button className="tourBtn" id="details">
+        <Link
+          className="tourBtn"
+          id="details"
+          to={{
+            pathname: `/tourInfo/${id}`,
+          }}
+        >
           Details
-        </button>
+        </Link>
         <button className="tourBtn" id="addCart">
           Add to cart
         </button>
