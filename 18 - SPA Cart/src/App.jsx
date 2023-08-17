@@ -1,9 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import PageLayout from "./Pages/PageLayout"
 import Tours from "./Pages/Tours"
-import TourCard from "./Pages/TourCard"
 import About from "./Pages/About"
 import ErrorPage from "./Pages/ErrorPage"
+import TourInfo from "./Pages/TourInfo"
+
+import { loader as tourLoader } from "./Pages/TourInfo"
 
 const router = createBrowserRouter([
   {
@@ -18,8 +20,9 @@ const router = createBrowserRouter([
       },
       {
         path: "tourInfo/:id",
-        element: <TourCard />,
+        element: <TourInfo />,
         errorElement: <ErrorPage />,
+        loader: tourLoader,
       },
       {
         path: "about",
