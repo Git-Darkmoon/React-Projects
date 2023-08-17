@@ -27,7 +27,7 @@ body {
     transition: var(--transition);
 
     &:hover {
-      color: var(--clr-active);
+      color: var(--clr-accent-hover);
     }
   }
 
@@ -44,14 +44,15 @@ body {
 
 .footer {
   @include mixins.layout();
+  color: var(--clr-grey);
 
   #github_link {
-    color: var(--clr-accent);
+    color: var(--clr-accent-hover);
     padding-inline: 0.25em;
     transition: var(--transition);
 
     &:hover {
-      color: violet;
+      color: var(--clr-accent);
     }
   }
 }
@@ -85,6 +86,8 @@ body {
   .tour-img {
     opacity: 0.75;
     transition: var(--transition);
+    object-fit: cover;
+    object-position: center;
   }
 
   .tour-name {
@@ -99,10 +102,12 @@ body {
       padding-inline: 1rem;
       padding-block: 0.5rem;
       transition: var(--transition);
+      color: var(--clr-white);
     }
 
     #addCart {
       background-color: var(--clr-accent);
+
       &:hover {
         background-color: var(--clr-accent-hover);
       }
@@ -110,6 +115,7 @@ body {
 
     #details {
       background-color: var(--clr-grey);
+      border-radius: var(--radius);
       &:hover {
         background-color: var(--clr-grey-hover);
       }
@@ -144,11 +150,37 @@ body {
 
   p {
     padding-block: 1rem;
-    opacity: 0.85;
+    opacity: var(--opTxt);
   }
 
   .last-p {
     align-self: flex-start;
     opacity: 0.5;
+  }
+}
+
+.singleTour {
+  width: 100%;
+  height: calc(100dvh - var(--layout-height) * 2);
+  display: flex;
+  flex-direction: column;
+  padding-block: 2rem;
+  gap: 2rem;
+
+  .singleTour-img {
+    max-width: 30rem;
+    object-position: center;
+  }
+
+  .singleTour-info {
+    .singleTour-title {
+      font-size: var(--fs-5);
+      line-height: 2;
+    }
+    .singleTour-desc {
+      font-size: var(--fs-2);
+      line-height: 1.6;
+      opacity: var(--opTxt);
+    }
   }
 }
