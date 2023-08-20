@@ -5,6 +5,8 @@ import About from "./Pages/About"
 import ErrorPage from "./Pages/ErrorPage"
 import TourInfo from "./Pages/TourInfo"
 
+import { Toaster } from "sonner"
+
 import { loader as tourLoader } from "./Pages/TourInfo"
 
 const router = createBrowserRouter([
@@ -34,6 +36,11 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <>
+      <Toaster theme="dark" />
+      <RouterProvider router={router} />
+    </>
+  )
 }
 export default App
