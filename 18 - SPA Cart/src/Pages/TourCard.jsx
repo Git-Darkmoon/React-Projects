@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { toast } from "sonner"
 
 function TourCard({ id, image, name, price }) {
   return (
@@ -21,7 +22,11 @@ function TourCard({ id, image, name, price }) {
         >
           Details
         </Link>
-        <button className="tourBtn" id="addCart">
+        <button
+          className="tourBtn"
+          id="addCart"
+          onClick={() => toast("Tour added to cart.")}
+        >
           Add to cart
         </button>
       </div>
