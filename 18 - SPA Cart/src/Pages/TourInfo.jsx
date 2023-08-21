@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { useLoaderData } from "react-router-dom"
 
 const API_URL = "https://www.course-api.com/react-tours-project"
@@ -12,6 +13,7 @@ export const loader = async ({ params }) => {
 
 function TourInfo() {
   const { id, allTours } = useLoaderData()
+  const [showMore, setShowMore] = useState(false)
 
   const singleTour = allTours.find((eachTour) => eachTour.id === id)
   const { image, name, info, price } = singleTour
@@ -20,7 +22,23 @@ function TourInfo() {
       <img src={image} alt="" className="singleTour-img" />
       <article className="singleTour-info">
         <h1 className="singleTour-title">{name}</h1>
-        <p className="singleTour-desc">{info}</p>
+
+        {showMore ? (
+          <p className="singleTour-desc">
+            {info}
+            <button className="showMore" onClick={() => setShowMore(!showMore)}>
+              Show Less
+            </button>
+          </p>
+        ) : (
+          <p className="singleTour-desc">
+            {`${info.slice(0, 200)}... `}
+            <button className="showMore" onClick={() => setShowMore(!showMore)}>
+              Show More
+            </button>
+          </p>
+        )}
+
         <h4>{price}</h4>
       </article>
     </section>
