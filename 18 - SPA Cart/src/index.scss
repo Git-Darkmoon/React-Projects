@@ -161,7 +161,7 @@ body {
 
 .singleTour {
   width: 100%;
-  height: calc(100dvh - var(--layout-height) * 2);
+  // height: calc(100dvh - var(--layout-height) * 2);
   display: flex;
   flex-direction: column;
   padding-block: 2rem;
@@ -170,6 +170,7 @@ body {
   .singleTour-img {
     max-width: 30rem;
     object-position: center;
+    border-radius: var(--radius);
   }
 
   .singleTour-info {
@@ -181,6 +182,13 @@ body {
       font-size: var(--fs-2);
       line-height: 1.61;
       opacity: var(--opTxt);
+    }
+  }
+  .showMore {
+    color: var(--clr-accent-hover);
+    transition: var(--transition);
+    &:hover {
+      color: var(--clr-accent);
     }
   }
 }
