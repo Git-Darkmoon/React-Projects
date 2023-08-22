@@ -39,7 +39,10 @@ function TourInfo() {
           </p>
         )}
 
-        <h4>{price}</h4>
+        <h4 className="price">
+          <span>price:</span>
+          {`$ ${price}`}
+        </h4>
       </article>
     </section>
   )
