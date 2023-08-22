@@ -6,6 +6,11 @@
   font-family: var(--ff-base);
 }
 
+::selection {
+  background-color: var(--clr-active);
+  color: var(--clr-black);
+}
+
 body {
   background-color: var(--clr-black);
   color: var(--clr-white);
@@ -18,6 +23,10 @@ body {
   justify-content: space-between;
   border-bottom: 1px solid var(--clr-grey);
 
+  .logo {
+    font-size: var(--fs-2);
+  }
+
   .linksList {
     display: flex;
     gap: 3rem;
@@ -25,6 +34,7 @@ body {
   .links {
     color: var(--clr-grey);
     transition: var(--transition);
+    font-size: var(--fs-2);
 
     &:hover {
       color: var(--clr-accent-hover);
@@ -40,15 +50,32 @@ body {
       color: var(--clr-accent);
     }
   }
-}
 
-.footer {
-  @include mixins.layout();
-  color: var(--clr-grey);
+  .icon-container {
+    position: relative;
 
-  #github_link {
-    color: var(--clr-accent-hover);
-    padding-inline: 0.25em;
+    &::after {
+      content: attr(data-items);
+      color: #fff;
+      position: absolute;
+      background-color: var(--clr-accent-hover);
+      top: -0.5rem;
+      right: -1rem;
+      padding: 0.2rem;
+      border-radius: 100%;
+      width: var(--fs-0);
+      height: var(--fs-0);
+      display: grid;
+      place-items: center;
+      font-size: var(--fs-0);
+      z-index: -10;
+    }
+  }
+
+  .shopping-icon {
+    color: var(--clr-white);
+    font-size: var(--fs-3);
+    cursor: pointer;
     transition: var(--transition);
 
     &:hover {
@@ -56,6 +83,54 @@ body {
     }
   }
 }
+
+.cart-container {
+  width: calc(100% - var(--pd-x) * 2);
+  position: absolute;
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  padding: 1rem;
+  z-index: 10;
+  opacity: 0;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.cart-card {
+  @include mixins.flexCenter(space-between);
+  padding-block: 0.25rem;
+  font-size: var(--fs-1);
+
+  .left-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    img {
+      width: 4.5vmax;
+      height: 4.5vmax;
+      background-color: var(--clr-black);
+      border-radius: 100%;
+      padding: 0.35rem;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.showCart {
+  opacity: 1;
+}
+
+.clearBtn {
+  background-color: var(--clr-black);
+  font-size: var(--fs-1);
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  text-transform: capitalize;
+  margin-block-start: 1em;
+}
+
+// Styles for main content in Home page.
 
 .tours-container {
   width: 100%;
@@ -67,6 +142,62 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   gap: 3rem;
 }
+
+// Styling isLoading and isError statuses in query.
+
+.response-container {
+  width: 100%;
+  height: var(--fullScreen-y);
+
+  font-size: var(--fs-4);
+  font-weight: 100;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+
+  @include mixins.flexCenter(center, column);
+  gap: 2rem;
+}
+
+.loading-container {
+  width: 100%;
+  height: var(--fullScreen-y);
+  @include mixins.flexCenter(center);
+}
+
+.loading-spinner {
+  width: 10vmax;
+  height: 10vmax;
+  border: 2px solid rgba(188, 143, 143, 0.1);
+  position: relative;
+
+  border-radius: 100%;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-top: 5px dashed var(--clr-accent);
+    position: absolute;
+    top: 0;
+    border-radius: 100%;
+    animation: spinner 2s ease-out infinite;
+  }
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorImg {
+  width: 50vmax;
+}
+
+/* ------------------------------------------ */
 
 .tourCard {
   border-radius: var(--radius);
@@ -88,10 +219,12 @@ body {
     transition: var(--transition);
     object-fit: cover;
     object-position: center;
+    user-select: none;
   }
 
   .tour-name {
     padding-block: 1rem;
+    font-size: var(--fs-3);
   }
 
   .btns-container {
@@ -103,6 +236,7 @@ body {
       padding-block: 0.5rem;
       transition: var(--transition);
       color: var(--clr-white);
+      font-size: var(--fs-1);
     }
 
     #addCart {
@@ -130,10 +264,13 @@ body {
     top: 0;
     transition: var(--transition);
     opacity: 0;
+    font-size: var(--fs-1);
+    box-shadow: inset 0px -5px 5px var(--clr-grey-hover);
+    z-index: -10;
   }
 
   &:hover::before {
-    top: -1.15rem;
+    top: -1rem;
     opacity: 1;
     background-color: var(--clr-active);
     border-top-left-radius: var(--radius);
@@ -141,10 +278,13 @@ body {
   }
 }
 
+// Styles for About page.
+
 .about {
   margin: 0 auto;
   max-width: 70ch;
-  height: calc(100dvh - var(--layout-height) * 2);
+  min-height: var(--fullScreen-y);
+  font-size: var(--fs-1);
 
   @include mixins.flexCenter(center, column);
 
@@ -155,17 +295,17 @@ body {
 
   .last-p {
     align-self: flex-start;
-    opacity: 0.5;
+    opacity: calc(var(--opTxt) / 2);
   }
 }
 
+// Styles for "Details" page.
+
 .singleTour {
   width: 100%;
-  // height: calc(100dvh - var(--layout-height) * 2);
   display: flex;
   flex-direction: column;
   padding-block: 2rem;
-  gap: 2rem;
 
   .singleTour-img {
     max-width: 30rem;
@@ -176,19 +316,68 @@ body {
   .singleTour-info {
     .singleTour-title {
       font-size: var(--fs-5);
-      line-height: 2;
+      padding-block: 0.5em;
     }
     .singleTour-desc {
       font-size: var(--fs-2);
-      line-height: 1.61;
-      opacity: var(--opTxt);
+      line-height: 1.6;
+      opacity: calc(var(--opTxt) / 1.35);
     }
   }
   .showMore {
-    color: var(--clr-accent-hover);
+    color: var(--clr-accent);
     transition: var(--transition);
+    padding-inline: 1rem;
+    font-size: var(--fs-0);
+    &:hover {
+      color: var(--clr-active);
+    }
+  }
+
+  .price {
+    @include mixins.flexCenter(end);
+    padding-block-start: 1em;
+    font-size: var(--fs-2);
+
+    span {
+      background-color: var(--clr-accent);
+      border-radius: var(--radius);
+      padding: 0.5rem 1rem;
+      margin-right: 0.5em;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.footer {
+  @include mixins.layout();
+  color: var(--clr-grey);
+  font-size: var(--fs-1);
+
+  #github_link {
+    color: var(--clr-accent-hover);
+    padding-inline: 0.25em;
+    transition: var(--transition);
+
     &:hover {
       color: var(--clr-accent);
     }
+  }
+}
+
+@media (width >= 62rem) {
+  .singleTour {
+    min-height: var(--fullScreen-y);
+    gap: 3rem;
+    flex-direction: row;
+  }
+  .singleTour-img {
+    max-height: calc(var(--fullScreen-y) - 4rem);
+    object-fit: cover;
+  }
+
+  .cart-container {
+    max-width: 40vw;
+    right: var(--pd-x);
   }
 }
