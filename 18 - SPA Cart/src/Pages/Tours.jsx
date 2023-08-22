@@ -1,30 +1,24 @@
-import { useQuery } from "@tanstack/react-query"
 import TourInfo from "./TourCard"
-
-const API_URL = "https://www.course-api.com/react-tours-project"
+import errorLogo from "../assets/undraw_server_down.svg"
+import { useGlobalContext } from "../context"
 
 function Tours() {
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["tours"],
-    queryFn: async () => {
-      const response = await fetch(API_URL)
-      const tours = response.json()
-      return tours
-    },
-  })
+  const { data, isLoading, isError } = useGlobalContext()
 
   if (isLoading) {
     return (
-      <section className="tours-container">
+      <section className=" response-container">
         <h1>Loading...</h1>
+        <div className="loading-spinner"></div>
       </section>
     )
   }
 
   if (isError) {
     return (
-      <section className="tours-container">
+      <section className="response-container">
         <h1>Something Went wrong...</h1>
+        <img className="errorImg" src={errorLogo} alt="problems fetching API" />
       </section>
     )
   }
