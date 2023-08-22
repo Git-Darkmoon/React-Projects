@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom"
 import { toast } from "sonner"
+import { useGlobalContext } from "../context"
 
 function TourCard({ id, image, name, price }) {
+  const { addItem, invalidID } = useGlobalContext()
+
   return (
     <article className="tourCard" data-price={`$ ${price}`}>
       <img
@@ -10,6 +13,7 @@ function TourCard({ id, image, name, price }) {
         className="tour-img"
         width={300}
         height={300}
+        loading="lazy"
       />
       <h2 className="tour-name">{name.split(" ").slice(0, 3).join(" ")}</h2>
       <div className="btns-container">
@@ -25,7 +29,13 @@ function TourCard({ id, image, name, price }) {
         <button
           className="tourBtn"
           id="addCart"
-          onClick={() => toast("Tour added to cart.")}
+          onClick={() => {
+            invalidID
+              ? toast.error("Cannot add the same tour twice.")
+              : toast.success("Tour added to cart.")
+
+            addItem(id)
+          }}
         >
           Add to cart
         </button>
