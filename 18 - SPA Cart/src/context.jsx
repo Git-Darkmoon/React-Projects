@@ -1,5 +1,8 @@
 import { useQuery } from "@tanstack/react-query"
 import { createContext, useContext, useState } from "react"
+import { toast } from "sonner"
+
+console.clear()
 
 export const AppContext = createContext()
 
@@ -18,20 +21,24 @@ export function AppProvider({ children }) {
   })
 
   const [cartItems, setCartItems] = useState([])
-  const [invalidID, setInvalidID] = useState(false)
 
   const [showItems, setShowItems] = useState(false)
 
   function addItem(id) {
-    const isItemAdded = cartItems.some((item) => item.id === id)
-    setInvalidID(isItemAdded)
-
-    if (invalidID) return
-
     const tourItem = data.find((eachTour) => id === eachTour.id)
     setCartItems([...cartItems, tourItem])
   }
-  console.log(cartItems)
+
+  function handleAddToCart(itemID) {
+    const isItemAdded = cartItems.some((item) => item.id === itemID)
+
+    if (isItemAdded) {
+      toast.error("Cannot add the same tour twice.")
+    } else {
+      toast.success("Tour added to cart.")
+      addItem(itemID)
+    }
+  }
 
   function toggleShowCart() {
     setShowItems(!showItems)
@@ -45,7 +52,7 @@ export function AppProvider({ children }) {
         showItems,
         toggleShowCart,
         addItem,
-        invalidID,
+        handleAddToCart,
         data,
         isLoading,
         isError,
