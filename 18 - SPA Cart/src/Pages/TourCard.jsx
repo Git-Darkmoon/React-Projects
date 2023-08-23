@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom"
-import { toast } from "sonner"
 import { useGlobalContext } from "../context"
 
 function TourCard({ id, image, name, price }) {
-  const { addItem, invalidID } = useGlobalContext()
+  const { handleAddToCart } = useGlobalContext()
 
   return (
     <article className="tourCard" data-price={`$ ${price}`}>
@@ -30,11 +29,7 @@ function TourCard({ id, image, name, price }) {
           className="tourBtn"
           id="addCart"
           onClick={() => {
-            invalidID
-              ? toast.error("Cannot add the same tour twice.")
-              : toast.success("Tour added to cart.")
-
-            addItem(id)
+            handleAddToCart(id)
           }}
         >
           Add to cart
